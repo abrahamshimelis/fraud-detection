@@ -13,7 +13,7 @@ def describe_numerical(df):
     numerical_stats = df[numerical_cols].describe()
     return numerical_stats
 
-def summarize_time_series(df, date_column):
+def summarize_time(df, date_column):
     # Convert the date column to datetime
     df[date_column] = pd.to_datetime(df[date_column])
     

@@ -155,6 +155,21 @@ def plot_categorical_two_cols(df, col1, col2):
     # Show the plot
     plt.show()
 
+def plot_categorical_numerical(df, numerical_col, categorical_col):
+    # Group by the categorical column and calculate the sum of the numerical column
+    data = df.groupby(categorical_col)[numerical_col].sum()
+
+    # Create the bar chart
+    data.plot(kind='bar')
+
+    # Set the labels
+    plt.ylabel('Sum of ' + numerical_col)
+    plt.xlabel(categorical_col)
+    plt.title('Sum of ' + numerical_col + ' per ' + categorical_col)
+
+    # Show the plot
+    plt.show()
+
 def display_summary_table(data_summary):
     for col, summary in data_summary.items():
         print(f"\n{col}:\n{tabulate(summary.reset_index(), headers='keys', tablefmt='psql')}")
