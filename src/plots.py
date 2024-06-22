@@ -6,7 +6,7 @@ from tabulate import tabulate
 
 # Function to plot histograms for numerical variables
 def plot_histograms(df):
-    numerical_cols = df.select_dtypes(include=np.number).columns.tolist()
+    numerical_cols = df.columns.tolist()
     for col in numerical_cols:
         plt.figure(figsize=(8, 6))
         plt.hist(df[col], bins=20, color='skyblue', edgecolor='black')
@@ -18,7 +18,7 @@ def plot_histograms(df):
 
 # Function to plot bar charts for categorical variables
 def plot_bar_charts(df):
-    categorical_cols = df.select_dtypes(include=['object', 'category']).columns.tolist()
+    categorical_cols = df.columns.tolist()
     for col in categorical_cols:
         plt.figure(figsize=(8, 6))
         df[col].value_counts().plot(kind='bar', color='skyblue')
@@ -151,6 +151,21 @@ def plot_categorical_two_cols(df, col1, col2):
     plt.ylabel('Count of ' + col1)
     plt.xlabel(col2)
     plt.title('Count of ' + col1 + ' per ' + col2)
+
+    # Show the plot
+    plt.show()
+
+def plot_categorical_numerical(df, numerical_col, categorical_col):
+    # Group by the categorical column and calculate the sum of the numerical column
+    data = df.groupby(categorical_col)[numerical_col].sum()
+
+    # Create the bar chart
+    data.plot(kind='bar')
+
+    # Set the labels
+    plt.ylabel('Sum of ' + numerical_col)
+    plt.xlabel(categorical_col)
+    plt.title('Sum of ' + numerical_col + ' per ' + categorical_col)
 
     # Show the plot
     plt.show()
