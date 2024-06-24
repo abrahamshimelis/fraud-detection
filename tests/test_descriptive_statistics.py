@@ -4,7 +4,7 @@ import numpy as np
 from io import StringIO
 import sys
 sys.path.append('../')
-from src.descriptive_statistics import summarize_categorical, describe_numerical, summarize_time_series
+from src.descriptive_statistics import summarize_categorical, describe_numerical, summarize_time
 
 class TestDescriptiveStatistics(unittest.TestCase):
     def test_describe_numerical(self):
@@ -50,7 +50,7 @@ class TestDescriptiveStatistics(unittest.TestCase):
         sys.stdout = stdout
 
         # Call the function with the test DataFrame
-        summarize_time_series(df, 'TransactionMonth')
+        summarize_time(df, 'TransactionMonth')
 
         # Get the output and reset stdout
         output = stdout.getvalue()
