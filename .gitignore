@@ -1,2 +1,4 @@
 data
 venv
+notebooks/mlruns
+notebooks/logistic_regression_model
