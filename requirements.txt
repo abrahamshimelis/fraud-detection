@@ -92,10 +92,10 @@ SQLAlchemy==2.0.31
 sqlparse==0.5.0
 stack-data==0.6.3
 tabulate==0.9.0
-tensorboard==2.16.2
-tensorboard-data-server==0.7.2
-tensorflow==2.16.1
-tensorflow-intel==2.16.1
+tensorboard
+tensorboard-data-server
+tensorflow
+tensorflow-intel
 termcolor==2.4.0
 threadpoolctl==3.5.0
 tornado==6.4.1
