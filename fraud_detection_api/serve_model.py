@@ -4,8 +4,10 @@ from flask import Flask, request, jsonify
 import joblib
 import numpy as np
 from preprocess_input import preprocess_input
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
 # Load the trained model
 model = joblib.load("../models/rfc_model.pkl")

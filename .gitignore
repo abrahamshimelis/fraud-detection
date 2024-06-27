@@ -3,3 +3,29 @@ venv
 notebooks/mlruns
 notebooks/logistic_regression_model
 models
+fraud-detection-ui/node_modules
+
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+fraud-detection-ui/node_modules
+fraud-detection-ui/.pnp
+fraud-detection-ui/.pnp.js
+
+# testing
+fraud-detection-ui/coverage
+
+# production
+fraud-detection-ui/build
+
+# misc
+fraud-detection-ui/.DS_Store
+fraud-detection-ui/.env.local
+fraud-detection-ui/.env.development.local
+fraud-detection-ui/.env.test.local
+fraud-detection-ui/.env.production.local
+
+fraud-detection-ui/npm-debug.log*
+fraud-detection-ui/yarn-debug.log*
+fraud-detection-ui/yarn-error.log*
